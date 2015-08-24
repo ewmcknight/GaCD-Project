@@ -38,29 +38,29 @@ The code uses package `dplyr`
 Flow of the "run_analysis.R" script
 
 1. Loading data from the "/UCI HAR Dataset" directory
-    i. From the root directory:
-        * "features.txt" as `features`
-        * "activity_labels.txt" as `activity_labels`
-    ii. From the "/test" directory:
-        * "subject_test.txt" as `subject_test`
-        * "X_test.txt" as `xtest`
-        * "Y_test.txt" as `ytest`
-    iii. From the "/train" directory:
-        * "subject_train.txt" as `subject_train`
-        * "X_train.txt" as `xtrain`
-        * "Y_train.txt" as `ytrain`
+  i. From the root directory:
+    * "features.txt" as `features`
+    * "activity_labels.txt" as `activity_labels`
+  ii. From the "/test" directory:
+    * "subject_test.txt" as `subject_test`
+    * "X_test.txt" as `xtest`
+    * "Y_test.txt" as `ytest`
+  iii. From the "/train" directory:
+    * "subject_train.txt" as `subject_train`
+    * "X_train.txt" as `xtrain`
+    * "Y_train.txt" as `ytrain`
 2. Merging data
-    i. `xtest`, `ytest`, and `subject_test` are bound as `test` using `features` as the column names
-    ii. `xtrain`, `ytrain`, and `subject_test` are bound as `train` using `features` as the column names
-    iii. `test` and `train` are bound as `master`
-    iv. The "features.txt" contained duplicates. `master` is stripped of these dups
-    v. `master` is stripped of all data not related to mean or standard deviation
-    vi. `master` is joined with `Activity` to make it more human-readable
+  i. `xtest`, `ytest`, and `subject_test` are bound as `test` using `features` as the column names
+  ii. `xtrain`, `ytrain`, and `subject_test` are bound as `train` using `features` as the column names
+  iii. `test` and `train` are bound as `master`
+  iv. The "features.txt" contained duplicates. `master` is stripped of these dups
+  v. `master` is stripped of all data not related to mean or standard deviation
+  vi. `master` is joined with `Activity` to make it more human-readable
 3. Summarizing and saving data
-    i. `master` is grouped by "Subject" & "Activity" fields
-    ii. `master` is summarized using the means of the remaining columns
-    iii. Redundancies in "Gyro" column names are eliminated by converting "BodyBody" to "Body"
-    iv. The resulting data is saved as "tidydata.txt"
+  i. `master` is grouped by "Subject" & "Activity" fields
+  ii. `master` is summarized using the means of the remaining columns
+  iii. Redundancies in "Gyro" column names are eliminated by converting "BodyBody" to "Body"
+  iv. The resulting data is saved as "tidydata.txt"
 
 Resulting dataset:
 ```
