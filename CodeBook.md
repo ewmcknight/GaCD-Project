@@ -55,11 +55,11 @@ Flow of the "run_analysis.R" script
   * `test` and `train` are bound as `master`
   * The "features.txt" contained duplicates. `master` is stripped of these dups
   * `master` is stripped of all data not related to mean or standard deviation
-  * `master` is joined with `Activity` to make it more human-readable
+  * `master` is joined with `activity_labels` to make it more human-readable
 3. Summarizing and saving data
-  * `master` is grouped by "Subject" & "Activity" fields
+  * `master` is grouped by *Subject* & *Activity* fields
   * `master` is summarized using the means of the remaining columns
-  * Redundancies in "Gyro" column names are eliminated by converting "BodyBody" to "Body"
+  * Redundancies in *..Gyro..* column names are eliminated by converting "BodyBody" to "Body"
   * The resulting data is saved as "tidydata.txt"
 
 Resulting dataset:
